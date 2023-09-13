@@ -49,3 +49,10 @@ VALUES
     (6),
     (7),
     (8);
+-- Agregar una columna "id_contacto" a la tabla de Usuarios como clave foránea
+ALTER TABLE usuarios
+ADD COLUMN id_contacto INT;
+
+-- Crear una clave foránea para la nueva columna
+ALTER TABLE usuarios
+ADD FOREIGN KEY (id_contacto) REFERENCES Contactos(id_contacto);
